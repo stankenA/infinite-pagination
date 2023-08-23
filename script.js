@@ -39,6 +39,7 @@ async function fetchNumberOfProducts(isFirstFetch) {
 		if (numberOfPosts === 100) {
 			observer.disconnect();
 			morePostsBtn.textContent = 'End of line.';
+			morePostsBtn.classList.remove('posts__more_active');
 		}
 	} catch (error) {
 		console.log(error)
@@ -46,7 +47,6 @@ async function fetchNumberOfProducts(isFirstFetch) {
 }
 
 // Observer
-
 const showMorePosts = function (entries) {
 	entries.forEach((entry) => {
 		if (entry.isIntersecting) {

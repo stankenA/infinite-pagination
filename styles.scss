@@ -1,5 +1,19 @@
 @import './vendor/normalize';
 
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.05);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
 .page {
 	min-height: 100vh;
 	font-family: 'Montserrat Alternates', sans-serif;
@@ -16,6 +30,10 @@
 		width: 100%;
 		text-align: center;
 		color: #fff;
+
+		@media screen and (max-width: 767px) {
+			font-size: 24px;
+		}
 	}
 }
 
@@ -26,6 +44,11 @@
 	&__wrapper {
 		width: 80%;
 		margin: 100px auto 0;
+
+		@media screen and (max-width: 767px) {
+			width: 94%;
+			margin-top: 42px;
+		}
 	}
 
 	&__list {
@@ -48,11 +71,22 @@
 		border: 2px solid var(--black, #000);
 		background: #FFF;
 		box-shadow: 10px 10px 0px 0px #81ADC8;
+		position: relative;
+
+		@media screen and (max-width: 767px) {
+			padding-top: 46px;
+			box-shadow: 5px 5px 0px 0px #81ADC8;
+		}
 	}
 
 	&__item-top {
 		display: flex;
 		gap: 20px;
+
+		@media screen and (max-width: 767px) {
+			flex-direction: column;
+			gap: 10px;
+		}
 	}
 
 	&__img {
@@ -61,12 +95,21 @@
 		display: block;
 		object-fit: cover;
 		border-radius: 8px;
+
+		@media screen and (max-width: 767px) {
+			width: 100%;
+		}
 	}
 
 	&__content {
 		width: 72%;
 		padding-top: 17px;
 		box-sizing: border-box;
+
+		@media screen and (max-width: 767px) {
+			width: 100%;
+			padding-top: 0;
+		}
 	}
 
 	&__number {
@@ -75,6 +118,12 @@
 		font-weight: 700;
 		line-height: 160%;
 		margin: 0;
+
+		@media screen and (max-width: 767px) {
+			position: absolute;
+			top: 10px;
+			left: 16px;
+		}
 	}
 
 	&__subtitle {
@@ -84,6 +133,10 @@
 		line-height: 140%;
 		letter-spacing: -0.453px;
 		margin: 4px 0 15px;
+
+		@media screen and (max-width: 767px) {
+			font-size: 20px;
+		}
 	}
 
 	&__txt {
@@ -94,6 +147,10 @@
 		margin: 0;
 		padding-top: 10px;
 		border-top: 1px solid #4D4D4D;
+
+		@media screen and (max-width: 767px) {
+			font-size: 15px;
+		}
 	}
 
 	&__item-bottom {
@@ -120,6 +177,10 @@
 		font-weight: 700;
 		line-height: 160%;
 		margin: 0;
+
+		@media screen and (max-width: 767px) {
+			font-weight: 20px;
+		}
 	}
 
 	&__more {
@@ -136,5 +197,13 @@
 		box-sizing: border-box;
 		padding: 12px;
 		text-align: center;
+
+		@media screen and (max-width: 1023px) {
+			width: 100%;
+		}
+
+		&_active {
+			animation: pulse 1.5s infinite ease-in-out;
+		}
 	}
 }
