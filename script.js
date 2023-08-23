@@ -27,20 +27,21 @@ const initialPosts = new View({
 let numberOfPosts = 0;
 
 async function fetchNumberOfProducts(isFirstFetch) {
+	observer.disconnect();
+
 	try {
 		const products = await api.getNumberOfProducts(5, numberOfPosts);
 		numberOfPosts += 5;
 		initialPosts.renderItems(products.products);
 
-		if (isFirstFetch) {
-			observer.observe(morePostsBtn);
-		}
-
 		if (numberOfPosts === 100) {
 			observer.disconnect();
 			morePostsBtn.textContent = 'End of line.';
 			morePostsBtn.classList.remove('posts__more_active');
+			return;
 		}
+
+		observer.observe(morePostsBtn);
 	} catch (error) {
 		console.log(error)
 	}
@@ -50,11 +51,11 @@ async function fetchNumberOfProducts(isFirstFetch) {
 const showMorePosts = function (entries) {
 	entries.forEach((entry) => {
 		if (entry.isIntersecting) {
-			fetchNumberOfProducts(false);
+			fetchNumberOfProducts();
 		}
 	});
 };
 const observer = new IntersectionObserver(showMorePosts, observerOptions);
 
 // Первый запрос
-fetchNumberOfProducts(true);
+fetchNumberOfProducts();
