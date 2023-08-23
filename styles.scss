@@ -1,0 +1,117 @@
+@import './vendor/normalize';
+
+.page {
+	min-height: 100vh;
+	font-family: 'Montserrat Alternates', sans-serif;
+	background-color: #F7EDE8;
+}
+
+.header {
+	background-color: #000;
+	display: flex;
+	align-items: center;
+	border-radius: 0 0 40px 40px;
+
+	&__title {
+		width: 100%;
+		text-align: center;
+		color: #fff;
+	}
+}
+
+.posts {
+	min-height: 80vh;
+	width: 60%;
+	margin: 100px auto 0;
+
+	&__list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+		width: 100%;
+	}
+
+	&__item {
+		width: 100%;
+		box-sizing: border-box;
+		padding: 16px;
+		border-radius: 12px;
+		border: 2px solid var(--black, #000);
+		background: #FFF;
+		box-shadow: 10px 10px 0px 0px #81ADC8;
+	}
+
+	&__item-top {
+		display: flex;
+		gap: 20px;
+	}
+
+	&__img {
+		width: 166px;
+		height: 166px;
+		display: block;
+		object-fit: cover;
+		border-radius: 8px;
+	}
+
+	&__content {
+		padding-top: 17px;
+		box-sizing: border-box;
+	}
+
+	&__number {
+		color: #CD4631;
+		font-size: 16px;
+		font-weight: 700;
+		line-height: 160%;
+		margin: 0;
+	}
+
+	&__subtitle {
+		color: #CD4631;
+		font-size: 22.65px;
+		font-weight: 700;
+		line-height: 140%;
+		letter-spacing: -0.453px;
+		margin: 4px 0 15px;
+	}
+
+	&__txt {
+		color: #4D4D4D;
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 160%;
+		margin: 0;
+		padding-top: 10px;
+		border-top: 1px solid #4D4D4D;
+	}
+
+	&__item-bottom {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 20px;
+	}
+
+	&__category {
+		color: #4D4D4D;
+		font-size: 14px;
+		font-weight: 500;
+		line-height: 160%;
+		box-sizing: border-box;
+		padding: 4px 12px;
+		border-radius: 4px;
+		border: 1px solid #4D4D4D;
+	}
+
+	&__price {
+		color: #4D4D4D;
+		font-size: 22px;
+		font-weight: 700;
+		line-height: 160%;
+		margin: 0;
+	}
+}
