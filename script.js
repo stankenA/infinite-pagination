@@ -26,13 +26,13 @@ const initialPosts = new View({
 // Запрос постов с пагинацией
 let numberOfPosts = 0;
 
-async function fetchNumberOfProducts(isFirstFetch) {
+async function fetchNumberOfProducts() {
 	observer.disconnect();
 
 	try {
-		const products = await api.getNumberOfProducts(5, numberOfPosts);
+		const response = await api.getNumberOfProducts(5, numberOfPosts);
+		initialPosts.renderItems(response.products);
 		numberOfPosts += 5;
-		initialPosts.renderItems(products.products);
 
 		if (numberOfPosts === 100) {
 			observer.disconnect();
@@ -43,7 +43,9 @@ async function fetchNumberOfProducts(isFirstFetch) {
 
 		observer.observe(morePostsBtn);
 	} catch (error) {
-		console.log(error)
+		console.log(error);
+		morePostsBtn.classList.remove('posts__more_active');
+		morePostsBtn.textContent = 'Some error occured';
 	}
 }
 
