@@ -23,6 +23,12 @@ class Api {
 			headers: this._headers
 		})
 	}
+
+	getNumberOfProducts(limit, skip) {
+		return this._request(`${this._url}/products?limit=${limit}&skip=${skip}`, {
+			headers: this._headers
+		})
+	}
 }
 
-export const api = new Api(configApi)
+export const api = new Api(configApi);

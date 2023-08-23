@@ -21,8 +21,12 @@
 
 .posts {
 	min-height: 80vh;
-	width: 100%;
-	margin: 100px auto 0;
+	margin-bottom: 100px;
+
+	&__wrapper {
+		width: 80%;
+		margin: 100px auto 0;
+	}
 
 	&__list {
 		list-style: none;
@@ -32,7 +36,7 @@
 		flex-direction: column;
 		gap: 30px;
 		width: 100%;
-		margin-bottom: 80px;
+		margin-bottom: 50px;
 		max-width: 870px;
 	}
 
@@ -116,5 +120,21 @@
 		font-weight: 700;
 		line-height: 160%;
 		margin: 0;
+	}
+
+	&__more {
+		display: block;
+		width: 40%;
+		margin: 0 auto;
+		border-radius: 8px;
+		border: 2px solid #000;
+		background: #000;
+		box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.25);
+		color: #fff;
+		font-size: 24px;
+		font-weight: 700;
+		box-sizing: border-box;
+		padding: 12px;
+		text-align: center;
 	}
 }

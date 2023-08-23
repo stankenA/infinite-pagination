@@ -328,7 +328,10 @@ template {
 
 .posts {
   min-height: 80vh;
-  width: 100%;
+  margin-bottom: 100px;
+}
+.posts__wrapper {
+  width: 80%;
   margin: 100px auto 0;
 }
 .posts__list {
@@ -339,7 +342,7 @@ template {
   flex-direction: column;
   gap: 30px;
   width: 100%;
-  margin-bottom: 80px;
+  margin-bottom: 50px;
   max-width: 870px;
 }
 .posts__item {
@@ -414,4 +417,19 @@ template {
   font-weight: 700;
   line-height: 160%;
   margin: 0;
+}
+.posts__more {
+  display: block;
+  width: 40%;
+  margin: 0 auto;
+  border-radius: 8px;
+  border: 2px solid #000;
+  background: #000;
+  box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  box-sizing: border-box;
+  padding: 12px;
+  text-align: center;
 }/*# sourceMappingURL=styles.css.map */
