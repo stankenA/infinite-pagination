@@ -8,8 +8,8 @@ export default class View {
 		this._container.prepend(element);
 	}
 
-	renderItems(item) {
-		item.forEach(element => {
+	renderItems(items) {
+		items.forEach(element => {
 			this._renderer(element);
 		});
 	}

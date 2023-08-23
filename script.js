@@ -20,4 +20,14 @@ const initialPosts = new View({
 	}
 }, '.posts__list');
 
-console.log(api.getAllProducts());
+async function fetchAllProducts() {
+	try {
+		const products = await api.getAllProducts();
+		initialPosts.renderItems(products.products.reverse());
+
+	} catch (error) {
+		console.log(error)
+	}
+}
+
+fetchAllProducts();

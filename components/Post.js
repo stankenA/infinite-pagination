@@ -34,7 +34,7 @@ export default class Post {
 		this._postTitle.textContent = this._title;
 		this._postTxt.textContent = this._txt;
 		this._postCategory.textContent = this._category;
-		this._postPrice.textContent = this._price;
+		this._postPrice.textContent = this._price + '$';
 
 		return this._element;
 	}
